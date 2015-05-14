@@ -26,9 +26,10 @@ class Lesson2Section4 {
         //!!!!! Swift 语言里的数组和字典中存储的数据值类型必须明确。
         
         
+        
         // -----------------------------------------
         
-        // MARK: 数组
+        // MARK: 数组 (Array)
         
         // -----------------------------------------
         
@@ -121,12 +122,77 @@ class Lesson2Section4 {
         */
         
         
+        //~~ 新语法:
+        //-- 数组的构造方法
+        // Swift 中的 Array 类型还提供一个可以创建特定大小并且所有数据都被默认的构造方法。
+        // 我们可以把准备加入新数组的数据项数量(count)和适当类型的初始值(repeatedValue)传 入数组构造函数:
         var threeDoubles = [Double](count: 3, repeatedValue:1.0)
+        //## 结果: threeDoubles 是一种[Double]数组, 等于 [1.0, 1.0, 1.0]
+        
+        var anotherThreeDoubles = Array(count: 3, repeatedValue: 2.5)
+        //## 结果: anotherThreeDoubles 是一种[Double]数组, 等于 [2.5, 2.5, 2.5]
+        
+        var sixDoubles = threeDoubles + anotherThreeDoubles
+        //## 打印: sixDoubles 被推断为[Double]数组, 等于[1.0, 1.0, 1.0, 2.5, 2.5, 2.5]
+        
+        
+        
+        
+        
+        
+        
+        
         // -----------------------------------------
         
-        // MARK: 字典
+        // MARK: 字典 (Dictionary)
         
         // -----------------------------------------
+        
+        
+        // Swift 的字典使用 Dictionary<KeyType, ValueType>定义,其中KeyType是字典中键的数据类型, ValueType是字典中对应于这些键所存储值的数据类型。
+        var airports: Dictionary<String, String> = [
+            "TYO": "Tokyo",
+            "DUB": "Dublin"]
+        
+        
+        
+        //-- 字典更新键值对
+        //updateValue(forKey:)函数会返回包含一个字典值类型的可选值。举例来说:对于存储 String 值的字典,这个函数会返回一个 String?或者“可选 String”类型的值。如果值存在,则这个可选值值等于被替换的值,否则将会是 nil。
+        
+        if let oldValue = airports.updateValue("Dublin Internation", forKey: "DUB") {
+            println("The old value for DUB was \(oldValue).")
+        }
+        //## 打印: "The old value for DUB was Dublin."(dub 原值是 dublin)
+        
+        
+        
+        //-- 字典删除键值对
+        if let removedValue = airports.removeValueForKey("DUB") {
+            println("The removed airport's name is \(removedValue).")
+        } else {
+            println("The airports dictionary does not contain a value for DUB.")
+        }
+        // 打印 "The removed airport's name is Dublin International."(被移除的 机场名字是都柏林国际)
+        
+        
+        
+        //-- 字典的遍历
+        for (airportCode, airportName) in airports {
+            println("\(airportCode): \(airportName)")
+        }
+        //## 打印: "TYO: Tokyo"
+        
+        
+        
+        //-- 字典的构造方法
+        var namesOfIntegers = Dictionary<Int, String>()
+        namesOfIntegers[16] = "sixteen"
+        // namesOfIntegers 现在包含一个键值对
+        namesOfIntegers = [:]
+        // namesOfIntegers 又成为了一个 Int, String类型的空字典
+        
+        
+        
         
         
         // -----------------------------------------
@@ -134,6 +200,18 @@ class Lesson2Section4 {
         // MARK: 集合的可变性
         
         // -----------------------------------------
+        
+        /*
+        数组和字典都是在单个集合中存储可变值。如果我们创建一个数组或者字典并且把它分配成一个变量,这个集合将会是可变的。这意味着我们可以在创建之后添加更多或移除已存在的 数据项来改变这个集合的大小。与此相反,如果我们把数组或字典分配成常量,那么他就是 不可变的,它的大小不能被改变。
+        
+        对字典来说,不可变性也意味着我们不能替换其中任何现有键所对应的值。不可变字典的内 容在被首次设定之后不能更改。 不可变行对数组来说有一点不同,当然我们不能试着改变 任何不可变数组的大小,但是我们可以重新设定相对现存索引所对应的值。这使得 Swift 数组在大小被固定的时候依然可以做的很棒。
+        
+        Swift 数组的可变性行为同时影响了数组实例如何被分配和修改,想获取更多信息,请参见 Assignment and Copy Behavior for Collection Types。
+        
+        注意: 在我们不需要改变数组大小的时候创建不可变数组是很好的习惯。如此 Swift 编译 器可以优化我们创建的集合。
+        */
+        
+        
         
         //MARK: End Runing
         println("\n\nLesson1-Section4 end running <<<<<<<")

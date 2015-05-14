@@ -31,8 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         l2s3.run(false)
         
         var l2s4 = Lesson2Section4()
-        l2s4.run(true)
+        l2s4.run(false)
         
+        var l2s5 = Lesson2Section5()
+        l2s5.run(true)
         
         
         return true

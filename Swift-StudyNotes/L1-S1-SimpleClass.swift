@@ -1,5 +1,5 @@
 //
-//  ViewController1.swift
+//  L1-S1-SimpleClass.swift
 //  Swift-StudyNotes
 //
 //  Created by 牛萌 on 15/5/11.
