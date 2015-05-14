@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3367DA291B042E910099083C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3367DA281B042E910099083C /* README.md */; };
 		33DEA06A1B0428360057339D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEA0691B0428360057339D /* AppDelegate.swift */; };
 		33DEA06C1B0428360057339D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEA06B1B0428360057339D /* ViewController.swift */; };
 		33DEA06F1B0428360057339D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DEA06D1B0428360057339D /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3367DA281B042E910099083C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33DEA0641B0428360057339D /* Swift-StudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-StudyNotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DEA0681B0428360057339D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DEA0691B0428360057339D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		33DEA05B1B0428360057339D = {
 			isa = PBXGroup;
 			children = (
+				3367DA281B042E910099083C /* README.md */,
 				33DEA0661B0428360057339D /* Swift-StudyNotes */,
 				33DEA07C1B0428360057339D /* Swift-StudyNotesTests */,
 				33DEA0651B0428360057339D /* Products */,
@@ -236,6 +239,7 @@
 				33DEA0901B0428670057339D /* L1-S1-SimpleClass.swift in Sources */,
 				33DEA0921B0428670057339D /* L2-S2.swift in Sources */,
 				33DEA06C1B0428360057339D /* ViewController.swift in Sources */,
+				3367DA291B042E910099083C /* README.md in Sources */,
 				33DEA06A1B0428360057339D /* AppDelegate.swift in Sources */,
 				33DEA0911B0428670057339D /* L2-S1.swift in Sources */,
 			);
@@ -433,6 +437,7 @@
 				33DEA0851B0428360057339D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33DEA0861B0428360057339D /* Build configuration list for PBXNativeTarget "Swift-StudyNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +446,7 @@
 				33DEA0881B0428360057339D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
