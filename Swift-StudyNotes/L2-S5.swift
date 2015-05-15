@@ -85,7 +85,7 @@ class Lesson2Section5 {
         
         //-- for 条件递增(for-condition-increment)
         for var index = 0; index < 3; ++index {
-                println("index is \(index)")
+            println("index is \(index)")
         }
         
         /*
@@ -129,8 +129,8 @@ class Lesson2Section5 {
             // move by the rolled amount
             square += diceRoll
             if square < board.count {
-            // if we're still on the board, move up or down for a snake or a ladder
-            square += board[square]
+                // if we're still on the board, move up or down for a snake or a ladder
+                square += board[square]
             }
         }
         println("Game over!")
@@ -162,7 +162,7 @@ class Lesson2Section5 {
         
         temperatureInFahrenheit = 40
         if temperatureInFahrenheit <= 32 {
-           // println("It's very cold. Consider wearing a scarf.")
+            // println("It's very cold. Consider wearing a scarf.")
         } else {
             println("It's not that cold. Wear a t-shirt.")
         }
@@ -175,7 +175,7 @@ class Lesson2Section5 {
         case "a", "e", "i", "o", "u":
             println("\(someCharacter) is a vowel")
         case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
-            "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+        "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
             println("\(someCharacter) is a consonant")
         default:
             println("\(someCharacter) is not a vowel or a consonant")
@@ -187,11 +187,153 @@ class Lesson2Section5 {
         //与 C 语言和 Objective-C 中的 switch 语句不同,在 Swift 中,当匹配的 case 块中的代码执行完毕后,程序会终止 switch 语句,而不会继续执行下一个 case 块。这也就是说,不需要 在 case 块中显式地使用 break 语句。这使得 switch 语句更安全、更易用,也避免了因忘记 写 break 语句而产生的错误。
         
         
+        //-- 范围匹配
+        //~~ 新语法
+        
+        // case块的模式也可以是一个值的范围。下面的例子展示了如何使用范围匹配来输出任意数字对应的自然语言格式:
+        let count = 3_000_000_000_000
+        let countedThings = "stars in the Milky Way"
+        var naturalCount: String
+        switch count {
+        case 0:
+            naturalCount = "no"
+        case 1...3:
+            naturalCount = "a few"
+        case 4...9:
+            naturalCount = "several"
+        case 10...99:
+            naturalCount = "tens of"
+        case 100...999:
+            naturalCount = "hundreds of"
+        case 1000...999_999:
+            naturalCount = "thousands of"
+        default:
+            naturalCount = "millions and millions of"
+        }
+        println("There are \(naturalCount) \(countedThings).")
+        //## 打印: There are millions and millions of stars in the Milky Way.
+        
+        
+        
+        // 你可以使用元组在同一个 switch 语句中测试多个值。元组中的元素可以是值,也可以是范围。另外,使用下划线(_)来匹配所有可能的值。
+        let somePoint = (1, 1)
+        switch somePoint {
+        case (0, 0):
+            println("(0, 0) is at the origin")
+        case (_, 0):
+            println("(\(somePoint.0), 0) is on the x-axis")
+        case (0, _):
+            println("(0, \(somePoint.1)) is on the y-axis")
+        case (-2...2, -2...2):
+                println("(\(somePoint.0), \(somePoint.1)) is inside the box")
+        default:
+            println("(\(somePoint.0), \(somePoint.1)) is outside of the box")
+        }
+        //## 打印: (1, 1) is inside the box
+        
+        
+        
+        //-- 值绑定 (Value Bindings)
+        //~~ 新语法
+        // case 块的模式允许将匹配的值绑定到一个临时的常量或变量,这些常量或变量在该 case 块里就可以被引用了——这种行为被称为值绑定。
+        let anotherPoint = (2, 0)
+        switch anotherPoint {
+        case (let x, 0):
+            println("on the x-axis with an x value of \(x)")
+        case (0, let y):
+            println("on the y-axis with a y value of \(y)")
+        case let (x, y):
+            println("somewhere else at (\(x), \(y))")
+        }
+        //## 打印: on the x-axis with an x value of 2
+        
+        
+        
+        //-- Where
+        //!!!!!
+        //~~ 新语法
+        // case 块的模式可以使用 where 语句来判断额外的条件。
+        // 下面的例子把下图中的点(x, y)进行了分类:
+        var yetAnotherPoint = (1, -1)
+        switch yetAnotherPoint {
+            //             case let (x, y) where x == y:
+            //             println("(\(x), \(y)) is on the line x == y")
+        case let (x, y) where x == -y:
+            println("(\(x), \(y)) is on the line x == -y")
+        case let (x, y):
+                println("(\(x), \(y)) is just some arbitrary point")
+        }
+        //## 打印: (1, -1) is on the line x == -y
+        
+        
+        
+        
+        
+        
         // -----------------------------------------
         
         // MARK: 控制转移语句
         
         // -----------------------------------------
+        
+        /*
+        控制转移语句改变你代码的执行顺序,通过它你可以实现代码的跳转。Swift 有四种控制转 移语句。
+        - continue
+        - break
+        - fallthrough
+        - return
+        */
+        
+        
+        
+        //-- continue
+        // continue 告诉一个循环体立刻停止本次循环迭代,重新开始下次循环迭代。就好像在说“本 次循环迭代我已经执行完了”,但是并不会离开整个循环体。
+        
+        let puzzleInput = "great minds think alike"
+        var puzzleOutput = ""
+        for character in puzzleInput {
+            switch character {
+        case "a", "e", "i", "o", "u", " ":
+            continue
+        default:
+            puzzleOutput += String(character)
+            }
+        }
+        println(puzzleOutput)
+        //## 打印: grtmndsthnklk
+        
+        
+        //-- ￼break
+        // break 语句会立刻结束整个控制流的执行。当你想要更早的结束一个 switch 代码块或者一个循环体时,你都可以使用 break 语句
+        
+        
+        //-- fallthrough
+        //~~ 新语法
+        /*
+        Swift 语言中的 switch 不会从上一个 case 分支落入到下一个 case 分支中。
+        相反,只要第一个匹配到的 case 分支完成了它需要执行的语句,整个 switch 代码块完成了它的执行。
+        相比之下,C 语言要求你显示的插入 break 语句到每个 switch 分支的末尾来阻止自动落入到下一个case分支中。
+        Swift语言的这种避免默认落入到下一个分支中的特性意味着它的switch功能要比 C 语言的更加清晰和可预测,可以避免无意识地执行多个 case 分支从而引发的错误。
+        */
+        let integerToDescribe = 5
+        var description = "The number \(integerToDescribe) is"
+        switch integerToDescribe {
+        case 2,3,5,7,11,13,17,19:
+            description += " a prime number, and also"
+            fallthrough
+        default:
+            description += " an integer."
+        }
+        println(description)
+        //## 打印: The number 5 is a prime number, and also an integer.
+        
+        //! 注意:
+        // fallthrough 关键字不会检查它下一个将会落入执行的 case 中的匹配条件。
+        // fallthrough 简单地使代码执行继续连接到下一个 case 中的执行代码,这和 C 语言标准中的 switch 语句特性是一样的。
+        
+        
+        
+        
         
         
         //MARK: End Runing
