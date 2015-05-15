@@ -122,7 +122,7 @@ class Lesson2Section3 {
         
         
         //MARK: End Runing
-        println("\n\nLesson1-Section3 end running <<<<<<<")
+        println("\n\nLesson2-Section3 end running <<<<<<<")
         println("------------------------------------\n\n")
     }
 }

@@ -21,6 +21,7 @@
 		33DEA0921B0428670057339D /* L2-S2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEA08C1B0428670057339D /* L2-S2.swift */; };
 		33DEA0931B0428670057339D /* L2-S3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEA08D1B0428670057339D /* L2-S3.swift */; };
 		33DEA0941B0428670057339D /* L2-S4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEA08E1B0428670057339D /* L2-S4.swift */; };
+		33EE97101B058F6200472C39 /* L2-S6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE970F1B058F6200472C39 /* L2-S6.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		33DEA08C1B0428670057339D /* L2-S2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "L2-S2.swift"; sourceTree = "<group>"; };
 		33DEA08D1B0428670057339D /* L2-S3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "L2-S3.swift"; sourceTree = "<group>"; };
 		33DEA08E1B0428670057339D /* L2-S4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "L2-S4.swift"; sourceTree = "<group>"; };
+		33EE970F1B058F6200472C39 /* L2-S6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "L2-S6.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				33DEA08E1B0428670057339D /* L2-S4.swift */,
 				3367DA2A1B04559E0099083C /* L2-S5.swift */,
 				3367DA2C1B0470A50099083C /* L2-S5-Game (蛇与梯子).rtfd */,
+				33EE970F1B058F6200472C39 /* L2-S6.swift */,
 				33DEA06B1B0428360057339D /* ViewController.swift */,
 				33DEA06D1B0428360057339D /* Main.storyboard */,
 				33DEA0701B0428360057339D /* Images.xcassets */,
@@ -241,6 +244,7 @@
 				33DEA0931B0428670057339D /* L2-S3.swift in Sources */,
 				33DEA08F1B0428670057339D /* L1-S1.swift in Sources */,
 				3367DA2B1B04559E0099083C /* L2-S5.swift in Sources */,
+				33EE97101B058F6200472C39 /* L2-S6.swift in Sources */,
 				33DEA0901B0428670057339D /* L1-S1-SimpleClass.swift in Sources */,
 				33DEA0921B0428670057339D /* L2-S2.swift in Sources */,
 				33DEA06C1B0428360057339D /* ViewController.swift in Sources */,
